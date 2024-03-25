@@ -1,0 +1,8 @@
+.cervena {display: none;}
+
+@media (min-width: 600px) {
+    .cervena 
+    {display: block}
+}
+
+

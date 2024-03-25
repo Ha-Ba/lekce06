@@ -20,3 +20,80 @@ do 540px - 1 obrázek na řádku (= mobil)
 > 1000px - 6 obrázky vedle sebe
 */
 
+.galerie {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+}
+
+/*buď to jde jednoduše přes calc takto:*/
+
+@media screen and (max-width:539px) {
+    .foto {
+            width: calc(100%/1)
+        }
+    }
+    
+    @media screen and (min-width: 540px) and (max-width: 600px) 
+        {
+            .foto {
+                    width: calc(100%/2)
+                }
+            }
+    
+    @media screen and (min-width: 661px) and (max-width:800px) 
+        {
+            .foto {
+                    width: calc(100%/3)
+                }
+            }
+    
+    @media screen and (min-width: 801px) and (max-width: 999px) 
+        {
+            .foto {
+                    width: calc(100%/4)
+                }
+            }
+    
+    @media screen and (min-width: 1000px) {
+        .foto {
+            width: calc(100%/6)
+        }
+    }
+    
+
+
+
+/*nebo to jde složitěji přes flex basis takto: 
+
+@media screen and (max-width:539px) {
+.foto {
+        flex-basis: 100%;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 600px) {
+    .foto  {
+        flex-basis: 50%;
+}
+}
+
+@media screen and (min-width: 661px) and (max-width:800px) {
+    .foto {
+       flex-basis: 32%;
+}
+}
+
+@media screen and (min-width: 801px) and (max-width: 999px) {
+    .foto {
+        flex-basis: 24%;
+}
+}
+
+@media screen and (min-width: 1000px) {
+    .foto {
+        flex-basis: 15%;
+}
+}
+*/
